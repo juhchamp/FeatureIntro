@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".fragments.CustomFragmentOne"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/image_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/title_tv"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:minHeight="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_android_black_64dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/resume_tv"
+        android:text="@string/loading_label"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/resume_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="6"
+        android:text="@string/loading_label"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

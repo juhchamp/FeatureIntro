@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="fontFamily" format="string"/>
+
+    <declare-styleable name="FeatureIntro">
+        <attr name="finishButtonStartVisible" format="boolean"/>
+        <attr name="finishButtonText" format="string"/>
+        <attr name="maintainBottomMargin" format="boolean"/>
+        <attr name="buttonsAllCaps" format="boolean"/>
+        <attr name="tabGravity"/>
+        <attr name="tabIndicatorHeight"/>
+        <attr name="tabBackground" />
+    </declare-styleable>
+
+</resources>

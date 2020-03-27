@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Feature Intro</string>
+    <string name="loading">Loading…</string>
+    <string name="button">Button</string>
+</resources>

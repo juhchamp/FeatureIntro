@@ -1,0 +1,40 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="FeatureIntroTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FeatureIntroTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">#ffffff</item>
+    </style>
+
+    <style name="FeatureIntroTheme.Tab">
+        <item name="tabBackground">@drawable/tab_selector_drawable</item>
+        <item name="tabGravity">center</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabRippleColor">@null</item>
+    </style>
+
+    <style name="FeatureIntroTheme.titleText" parent="FeatureIntroTheme">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="FeatureIntroTheme.resumeText" parent="FeatureIntroTheme">
+        <item name="android:textColor">@color/colorDarkerGray</item>
+    </style>
+
+    <style name="FeatureIntroTheme.Button" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">#fff</item>
+        <item name="android:background">@drawable/selector_feature_intro_button</item>
+    </style>
+
+</resources>

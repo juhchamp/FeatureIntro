@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Feature Intro Lib</string>
+    <string name="loading_label">Loading…</string>
+    <string name="see_with_custom_fragment">See with custom fragment</string>
+</resources>

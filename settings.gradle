@@ -1,0 +1,3 @@
+rootProject.name='Feature Intro Lib'
+include ':app'
+include ':feature_intro'

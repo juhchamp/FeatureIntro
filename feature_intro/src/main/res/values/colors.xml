@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#02fa68</color>
+    <color name="colorPrimaryDark">#02fa68</color>
+    <color name="colorAccent">#02fa68</color>
+    <color name="colorTabUnselected">@android:color/darker_gray</color>
+    <color name="colorTabSelected">#02fa68</color>
+    <color name="colorBlack">#FF000000</color>
+    <color name="colorBlack2">#151515</color>
+    <color name="colorDarkerGray">@android:color/darker_gray</color>
+</resources>
