@@ -1,7 +1,33 @@
 # FeatureIntro
 A simple lib to show introduction for a feature in Android.
 
-# How to use ?
+[![](https://jitpack.io/v/juhchamp/FeatureIntro.svg)](https://jitpack.io/#juhchamp/FeatureIntro)
+
+## Download
+Download the latest version via Gradle:
+
+**Step 1.**
+Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:
+
+```
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+**Step 2.**
+Add the SimpleBiometricHandler dependency
+
+```
+dependencies {
+    implementation 'com.github.juhchamp:FeatureIntro:1.0.0'
+}
+```
+
+## How to use ?
 Add the view in your activity layout:
 
 ```kotlin
@@ -15,7 +41,7 @@ Add the view in your activity layout:
     app:finishButtonStartVisible="false"/>
 ```
 
-# Init it in your activity code
+## Init it in your activity code
 
 ```kotlin
 feature_intro_view.
@@ -38,7 +64,7 @@ feature_intro_view.
 
 ```
 
-# Use setup with override methods
+## Use setup with override methods
 
 Make your activity extends the  ```FeatureIntroInteractionListener```
 ```kotlin
