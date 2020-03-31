@@ -1,3 +1,10 @@
+/*
+ * Created by José Jailton da Silva Júnior on 31/03/20 16:04
+ * Copyright (c) 2020 . All rights reserved.
+ * Last modified 31/03/20 16:04
+ * https://github.com/juhchamp
+ */
+
 package juhchamp.com.br.feature_intro
 
 import android.annotation.TargetApi
