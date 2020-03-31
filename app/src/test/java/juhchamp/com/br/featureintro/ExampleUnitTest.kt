@@ -1,4 +1,4 @@
-package juhchamp.com.br.featureintrolib
+package juhchamp.com.br.featureintro
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package juhchamp.com.br.featureintrolib
+package juhchamp.com.br.featureintro
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -33,28 +33,28 @@ class MainActivity : AppCompatActivity(), FeatureIntro.FeatureIntroInteractionLi
             withDefault(this)
             .addStep(
                 R.drawable.ilustracao_tutorial_revendedores_1,
-                "Revenda serviços",
-                "Use seu telemóvel para ganhar dinheiro e receba a comissão da venda na hora. Vendeu, recebeu!"
+                getString(R.string.step1_title),
+                getString(R.string.step1_text)
             )
             .addStep(
                 R.drawable.ilustracao_tutorial_revendedores_2,
-                "Até 8% de comissão",
-                "Não precisa de aprovação para revender. É só depositar, revender e receber sua comissão."
+                getString(R.string.step2_title),
+                getString(R.string.step2_text)
             )
             .addStep(
                 R.drawable.ilustracao_tela_revendedores_3,
-                "Deposite dinheiro na sua carteira para começar a revender",
-                "Oferecemos a comissão na hora da venda. Seu negócio cresce quanto mais você vende."
+                getString(R.string.step3_title),
+                getString(R.string.step3_text)
             )
             .addStep(
                 R.drawable.ilustracao_tela_revendedores_4,
-                "Assista seu dinheiro render",
-                "Acompanhe seu lucro mensal com a ferramenta mais avançada do mercado. Sem taxas ou números escondidos."
+                getString(R.string.step4_title),
+                getString(R.string.step4_text)
             )
             .addStep(
                 R.drawable.ilustracao_tutorial_revendedores_5,
-                "Levante seu dinheiro há qualquer momento",
-                "Você não paga nenhuma taxa ou assina contratos. Não temos burocracia. Queremos o seu crescimento."
+                getString(R.string.step5_title),
+                getString(R.string.step5_text)
             )
             .setup(this)
     }
@@ -64,30 +64,38 @@ class MainActivity : AppCompatActivity(), FeatureIntro.FeatureIntroInteractionLi
         frags.add(0,
             FeatureIntroFragment.newInstance(
                 R.drawable.ic_launcher_background,
-                "Hello world",
-                "This is step 1 he."
+                getString(R.string.hello_world),
+                getString(R.string.this_is_step_1_he)
             )
         )
 
         frags.add(1,
             FeatureIntroFragment.newInstance(
                 R.drawable.ic_launcher_foreground,
-                "Hello world 2",
-                "This is step 2 hehe."
+                getString(R.string.hello_world_2),
+                getString(R.string.this_is_step_2_he_he)
             )
         )
 
         feature_intro_view.
             withDefault(this, frags)
-            .setFinishButtonText("Continue")
+            .setFinishButtonText(getString(R.string.continue_label))
             .setup(object: FeatureIntro.FeatureIntroInteractionListener {
                 override fun onFinishButtonClick() {
-                    Toast.makeText(this@MainActivity, "Continue.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        getString(R.string.continue_label),
+                        Toast.LENGTH_SHORT)
+                        .show()
                 }
             })
     }
 
     override fun onFinishButtonClick() {
-        Toast.makeText(this@MainActivity, "onFinishButtonClick", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            this@MainActivity,
+            getString(R.string.on_finish_button_click),
+            Toast.LENGTH_SHORT)
+            .show()
     }
 }

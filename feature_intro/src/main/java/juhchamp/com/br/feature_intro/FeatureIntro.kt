@@ -13,7 +13,6 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import juhchamp.com.br.feature_intro.fragments.FeatureIntroFragment
 
-
 class FeatureIntro: RelativeLayout {
 
     private var viewPager: ViewPager? = null

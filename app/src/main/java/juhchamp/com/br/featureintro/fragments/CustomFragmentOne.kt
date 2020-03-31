@@ -1,11 +1,11 @@
-package juhchamp.com.br.featureintrolib.fragments
+package juhchamp.com.br.featureintro.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import juhchamp.com.br.featureintrolib.R
+import juhchamp.com.br.featureintro.R
 import kotlinx.android.synthetic.main.fragment_custom_one.*
 
 private const val IMAGE_ID_ARG = "imageid"

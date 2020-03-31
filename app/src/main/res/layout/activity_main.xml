@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         app:maintainBottomMargin="true"
         app:finishButtonStartVisible="false"
-        app:finishButtonText="Finalizar"
+        app:finishButtonText="@string/finish_button_label"
         app:buttonsAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/mode_two_button"
         app:layout_constraintLeft_toLeftOf="parent"

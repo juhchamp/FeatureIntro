@@ -2,4 +2,27 @@
     <string name="app_name">Feature Intro Lib</string>
     <string name="loading_label">Loading…</string>
     <string name="see_with_custom_fragment">See with custom fragment</string>
+    <string name="step1_title">Revenda serviços</string>
+    <string name="step1_text">Use seu telemóvel para ganhar dinheiro e receba a comissão da venda na hora. Vendeu, recebeu!</string>
+    <string name="step2_title">Até 8% de comissão</string>
+    <string name="step2_text">Não precisa de aprovação para revender. É só depositar, revender e receber sua comissão.</string>
+    <string name="step3_title">Deposite dinheiro na sua carteira para começar a revender</string>
+    <string name="step3_text">Oferecemos a comissão na hora da venda. Seu negócio cresce quanto mais você vende.</string>
+    <string name="step4_title">Assista seu dinheiro render</string>
+    <string name="step4_text">Acompanhe seu lucro mensal com a ferramenta mais avançada do mercado. Sem taxas ou números escondidos.</string>
+    <string name="step5_title">Levante seu dinheiro há qualquer momento</string>
+    <string name="step5_text">Você não paga nenhuma taxa ou assina contratos. Não temos burocracia. Queremos o seu crescimento.</string>
+    <string name="hello_world">Hello world</string>
+    <string name="this_is_step_1_he">This is step 1 he.</string>
+    <string name="hello_world_2">Hello world 2</string>
+    <string name="this_is_step_2_he_he">This is step 2 hehe.</string>
+    <string name="continue_label">Continue</string>
+    <string name="on_finish_button_click">onFinishButtonClick</string>
+    <string name="hello_human">Hello human! You\'re ok?</string>
+    <string name="custom_title_1">ic_launcher_foreground</string>
+    <string name="custom_text_1">Hello ic_launcher_foreground!</string>
+    <string name="custom_title_2">ic_launcher_background</string>
+    <string name="custom_text_2">Hello ic_launcher_background!</string>
+    <string name="next">Next</string>
+    <string name="finish_button_label">Finalizar</string>
 </resources>
