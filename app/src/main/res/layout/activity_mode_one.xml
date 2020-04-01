@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by José Jailton da Silva Júnior on 01/04/20 16:50
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 01/04/20 16:50
+  ~ https://github.com/juhchamp
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".ModeOneActivity">
+
+    <juhchamp.com.br.feature_intro.FeatureIntro
+        android:id="@+id/feature_intro_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:buttonsAllCaps="false"
+        app:finishButtonText="@string/finish_button_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:useCloseButton="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

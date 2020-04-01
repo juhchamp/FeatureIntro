@@ -13,7 +13,9 @@ import android.os.Build
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.RelativeLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager.widget.ViewPager
@@ -24,17 +26,57 @@ class FeatureIntro: RelativeLayout {
 
     private var viewPager: ViewPager? = null
     private var tabLayout: TabLayout? = null
+    private var closeButton: ImageView? = null
     private var finishButton: Button? = null
     private var adapter: ViewPagerAdapter? = null
 
-    private var buttonsAllCaps: Boolean = true
     private var maintainBottomMargin: Boolean = false
     private var finishButtonStartVisible: Boolean = false
-    private var finishButtonText: String = "Finish"
-
-    private var listener: FeatureIntroInteractionListener? = null
-
+    private var interactionListener: FeatureIntroInteractionListener? = null
     private var fromCustomFragment: Int = -1
+
+    /**
+     * Set AllCaps status for the buttons texts.
+     */
+    var buttonsAllCaps: Boolean = false
+        set(value) {
+            finishButton!!.isAllCaps = value
+            field = value
+        }
+
+    /**
+     * Use close button? True to show close button, False to hide.
+     */
+    var useCloseButton: Boolean = false
+        set(value) {
+            if (value) {
+                closeButton!!.setOnClickListener { interactionListener?.onCloseButtonClick() }
+                closeButton!!.visibility = VISIBLE
+            } else {
+                closeButton!!.visibility = GONE
+            }
+            field = value
+        }
+
+    /**
+     * Set finish button text.
+     */
+    var finishButtonText: String = "Finish"
+        set(value) {
+            finishButton!!.text  = value
+            field = value
+        }
+
+    /**
+     * Activate or deactivate the finish button.
+     * True to activate and False to deactivate.
+     */
+    var finishButtonEnabled: Boolean = true
+        set(value) {
+            finishButton!!.isEnabled = value
+            finishButton!!.setTextColor(ContextCompat.getColor(context, R.color.colorDarkerGray))
+            field = value
+        }
 
     private val onPageChangeListener: ViewPager.OnPageChangeListener = object: ViewPager.OnPageChangeListener {
 
@@ -43,11 +85,15 @@ class FeatureIntro: RelativeLayout {
         }
 
         override fun onPageSelected(position: Int) {
+            val itemCount = adapter?.count!!-1
+
             if (!finishButtonStartVisible) {
                 finishButton!!.visibility =
-                    if (position >= adapter?.count!!-1) View.VISIBLE
+                    if (position >= itemCount) View.VISIBLE
                     else (if (maintainBottomMargin) View.INVISIBLE else View.GONE)
             }
+
+            interactionListener?.onPageChange(position, itemCount)
         }
 
         override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
@@ -87,12 +133,14 @@ class FeatureIntro: RelativeLayout {
         val mRoot = View.inflate(context, R.layout.layout_feature_intro, this)
         viewPager = mRoot.findViewById(R.id.view_pager)
         tabLayout = mRoot.findViewById(R.id.tab_layout)
+        closeButton = mRoot.findViewById(R.id.close_button)
         finishButton = mRoot.findViewById(R.id.finish_button)
 
         typedArray.let {
             buttonsAllCaps = it.getBoolean(R.styleable.FeatureIntro_buttonsAllCaps, true)
             maintainBottomMargin = it.getBoolean(R.styleable.FeatureIntro_maintainBottomMargin, true)
             finishButtonStartVisible = it.getBoolean(R.styleable.FeatureIntro_finishButtonStartVisible, false)
+            useCloseButton = it.getBoolean(R.styleable.FeatureIntro_useCloseButton, false)
             val finishButtonTextIndex = it.getString(R.styleable.FeatureIntro_finishButtonText)
             if (finishButtonTextIndex != null) {
                 finishButtonText = finishButtonTextIndex
@@ -101,9 +149,7 @@ class FeatureIntro: RelativeLayout {
 
         finishButton!!.visibility = if (finishButtonStartVisible) View.VISIBLE
         else (if (maintainBottomMargin) View.INVISIBLE else View.GONE)
-        finishButton!!.text = finishButtonText
-        finishButton!!.setOnClickListener { listener?.onFinishButtonClick() }
-        finishButton!!.isAllCaps = buttonsAllCaps
+        finishButton!!.setOnClickListener { interactionListener?.onFinishButtonClick() }
 
         typedArray.recycle()
     }
@@ -144,7 +190,10 @@ class FeatureIntro: RelativeLayout {
      * @param activity the fragmentActivity for get supportFragmentManager
      * @param featureIntroFragments a list of [FeatureIntroFragment] to use.
      */
-    fun withDefault(activity: FragmentActivity, featureIntroFragments: MutableList<FeatureIntroFragment>): FeatureIntro {
+    fun withDefault(
+        activity: FragmentActivity,
+        featureIntroFragments: MutableList<FeatureIntroFragment>
+    ): FeatureIntro {
         initAdapter(activity)
         fromCustomFragment = 0
         featureIntroFragments.forEach {
@@ -200,8 +249,8 @@ class FeatureIntro: RelativeLayout {
     /**
      * Setup the intro view and show to the user.
      */
-    fun setup(listener: FeatureIntroInteractionListener) {
-        this.listener = listener
+    fun setup(interactionListener: FeatureIntroInteractionListener) {
+        this.interactionListener = interactionListener
         viewPager!!.adapter = adapter
         tabLayout!!.setupWithViewPager(viewPager, true)
     }
@@ -210,7 +259,7 @@ class FeatureIntro: RelativeLayout {
      * Destroy intro instance and remove listeners.
      */
     fun destroy() {
-        listener = null
+        interactionListener = null
         viewPager?.removeOnPageChangeListener(onPageChangeListener)
     }
 
@@ -219,7 +268,20 @@ class FeatureIntro: RelativeLayout {
      * view to allow an interaction in this view to be communicated to the activity
      */
     interface FeatureIntroInteractionListener {
+        /**
+         * This method is called when user touch the finish button.
+         */
         fun onFinishButtonClick()
+
+        /**
+         * This method is called when user touch the close button.
+         */
+        fun onCloseButtonClick()
+
+        /**
+         * This method is called when user slide the feature page view.
+         */
+        fun onPageChange(index: Int, itemCount: Int)
     }
 
     private companion object {
