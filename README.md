@@ -92,3 +92,10 @@ override fun onFinishButtonClick() {
 }
 
 ```
+## Methods
+```kotlin
+feature_intro_view.buttonsAllCaps = true or false
+feature_intro_view.useCloseButton  = true or false
+feature_intro_view.finishButtonText = "Hello world!"
+feature_intro_view.finishButtonEnabled = true or false
+```
