@@ -2,7 +2,6 @@ package juhchamp.com.br.featureintro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import juhchamp.com.br.feature_intro.FeatureIntro
 import juhchamp.com.br.featureintro.fragments.CustomFragmentOne
@@ -43,11 +42,15 @@ class ModeTwoActivity : AppCompatActivity() {
             .withCustom(this, customFrags)
             .setup(object: FeatureIntro.FeatureIntroInteractionListener {
                 override fun onFinishButtonClick() {
-                    Toast.makeText(
-                        this@ModeTwoActivity,
-                        getString(R.string.next),
-                        Toast.LENGTH_SHORT)
-                        .show()
+                    finish()
+                }
+
+                override fun onCloseButtonClick() {
+                    finish()
+                }
+
+                override fun onPageChange(index: Int, itemCount: Int) {
+                    // no-op
                 }
             })
     }

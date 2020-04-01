@@ -4,5 +4,8 @@
         android:drawable="@drawable/drawable_feature_intro_button_touched"
         android:state_pressed="true"/>
     <item
+        android:drawable="@drawable/drawable_feature_intro_button_deactivated"
+        android:state_enabled="false"/>
+    <item
         android:drawable="@drawable/drawable_feature_intro_button_idle"/>
 </selector>

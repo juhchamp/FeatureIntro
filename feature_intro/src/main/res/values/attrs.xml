@@ -11,6 +11,7 @@
         <attr name="tabGravity"/>
         <attr name="tabIndicatorHeight"/>
         <attr name="tabBackground" />
+        <attr name="useCloseButton" format="boolean" />
     </declare-styleable>
 
 </resources>

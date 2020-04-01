@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Feature Intro Lib</string>
     <string name="loading_label">Loading…</string>
+    <string name="see_with_default_fragment">See with default fragment</string>
     <string name="see_with_custom_fragment">See with custom fragment</string>
     <string name="step1_title">Revenda serviços</string>
     <string name="step1_text">Use seu telemóvel para ganhar dinheiro e receba a comissão da venda na hora. Vendeu, recebeu!</string>
@@ -18,11 +19,12 @@
     <string name="this_is_step_2_he_he">This is step 2 hehe.</string>
     <string name="continue_label">Continue</string>
     <string name="on_finish_button_click">onFinishButtonClick</string>
-    <string name="hello_human">Hello human! You\'re ok?</string>
+    <string name="hello_human">Hello human! You\'re OK?</string>
     <string name="custom_title_1">ic_launcher_foreground</string>
     <string name="custom_text_1">Hello ic_launcher_foreground!</string>
     <string name="custom_title_2">ic_launcher_background</string>
     <string name="custom_text_2">Hello ic_launcher_background!</string>
     <string name="next">Next</string>
     <string name="finish_button_label">Finalizar</string>
+    <string name="close_button_click">onCloseButtonClick</string>
 </resources>
